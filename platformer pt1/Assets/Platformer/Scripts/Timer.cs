@@ -6,7 +6,7 @@ using UnityEngine;
 public class Timer : MonoBehaviour
 {
     public float accumulatedTime = 0f;
-    public int totalTime = 300;
+    public int totalTime = 100;
     public GameObject timeText;
 
     private const int TimeStops = 0;
@@ -34,11 +34,12 @@ public class Timer : MonoBehaviour
         {
             ResetTime();
             timeText.GetComponent<TextMeshProUGUI>().text = totalTime.ToString();
+            Debug.Log("You have failed!");
         }
     }
 
     private void ResetTime()
     {
-        totalTime = 300;
+        totalTime = 100;
     }
 }

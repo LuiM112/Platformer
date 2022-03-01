@@ -9,6 +9,10 @@ public class LevelParser : MonoBehaviour
     public GameObject brickPrefab;
     public GameObject questionBoxPrefab;
     public GameObject stonePrefab;
+    public GameObject waterPrefab;
+    public GameObject goalPrefab;
+    public GameObject deepPrefab;
+    public GameObject coinPrefab;
     public Transform environmentRoot;
 
     // --------------------------------------------------------------------------
@@ -61,6 +65,10 @@ public class LevelParser : MonoBehaviour
                 var Qblock = Instantiate(questionBoxPrefab);
                 var Bricks = Instantiate(brickPrefab);
                 var Stones = Instantiate(stonePrefab);
+                var water = Instantiate(waterPrefab);
+                var goal = Instantiate(goalPrefab);
+                var deepWater = Instantiate(deepPrefab);
+                var coin = Instantiate(coinPrefab);
 
                 if (letter == 'x')
                 {
@@ -80,6 +88,22 @@ public class LevelParser : MonoBehaviour
                 if (letter == 's')
                 {
                     Stones.transform.position = new Vector3(column, row, 0);
+                }
+                if (letter == 'w')
+                {
+                    water.transform.position = new Vector3(column, row, 0);
+                }
+                if (letter == 'g')
+                {
+                    goal.transform.position = new Vector3(column, row, 0);
+                }
+                if (letter == 'd')
+                {
+                    deepWater.transform.position = new Vector3(column, row, 0);
+                }
+                if (letter == 'c')
+                {
+                    coin.transform.position = new Vector3(column, row, 0);
                 }
                 
                 // Todo - Position the new GameObject at the appropriate location by using row and column
